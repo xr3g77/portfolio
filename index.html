@@ -3,82 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Alghafli | Software, AI & Data Portfolio</title>
-    <meta name="description" content="Portfolio of Mohammed Alghafli, an aspiring Full-Stack Software Developer, AI Engineer, Data Analyst, and CIS student.">
+    <title>Mohammed Alghafli | Software, Data & AI Portfolio</title>
+    <meta name="description" content="Portfolio of Mohammed Alghafli — Full-Stack Software Developer, AI Engineer, Data Analyst, and CIS student. Turning data, systems, and AI into software businesses rely on.">
+    <meta name="theme-color" content="#070b16">
+
+    <!-- Social / Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mohammed Alghafli — Software, Data & AI Portfolio">
+    <meta property="og:description" content="Turning data, systems, and AI into software businesses rely on.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
 
+    <!-- Skip link (a11y) -->
+    <a href="#work" class="skip-link">Skip to content</a>
+
+    <!-- Aurora gradient-mesh backdrop -->
+    <div class="aurora" aria-hidden="true">
+        <span class="aurora-blob blob-a" data-parallax="0.06"></span>
+        <span class="aurora-blob blob-b" data-parallax="-0.04"></span>
+        <span class="aurora-blob blob-c" data-parallax="0.03"></span>
+        <span class="aurora-blob blob-d" data-parallax="-0.05"></span>
+        <div class="aurora-grid"></div>
+        <div class="aurora-noise"></div>
+    </div>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="#" class="logo">Mohammed Alghafli</a>
+    <nav id="navbar" aria-label="Primary">
+        <div class="nav-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-mark" aria-hidden="true">M</span>
+                <span class="logo-text">Mohammed Alghafli</span>
+            </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certs">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-nav-toggle" id="mobile-toggle">
-                <i data-lucide="menu"></i>
+            <div class="nav-right">
+                <a href="#contact" class="btn btn-primary btn-sm nav-cta magnetic">Get in touch</a>
+                <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <i data-lucide="menu"></i>
+                </button>
             </div>
         </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
-    <section id="hero" style="text-align: center;">
-        <div class="hero-bg-overlay"></div>
-        <div class="container">
-            <div class="hero-content" style="margin: 0 auto;">
-                <span class="badge" data-reveal>CIS Student • CEO of SIYAQ • Aspiring Full-Stack Developer</span>
-                <p class="hero-subtitle" data-reveal>Hi, I’m Mohammed Alghafli.</p>
-                <h1 class="hero-title" data-reveal>I build <span class="text-gradient">digital, data-driven,</span> and <span class="text-gradient">AI-powered</span> solutions.</h1>
-                <p class="hero-description" data-reveal style="margin-left: auto; margin-right: auto; max-width: 700px; font-size: 16px;">
-                    I am a Computer Information Systems student at King Faisal University, an aspiring Full-Stack Software Developer, AI Engineering, and Data Analyst. I am also the CEO & Co-Founder of SIYAQ, an educational initiative focused on helping learners understand and apply data skills through practical and modern learning experiences.
+    <section id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge" data-reveal>
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Available for co-op &amp; internships
+                </span>
+                <h1 class="hero-title" data-reveal>
+                    Turning <span class="text-gradient">data, systems &amp; AI</span>
+                    into software <span class="text-gradient">businesses rely on.</span>
+                </h1>
+                <p class="hero-description" data-reveal>
+                    I'm <strong>Mohammed Alghafli</strong> — a Computer Information Systems student at King Faisal University, aspiring full-stack developer, and CEO &amp; Co-Founder of <strong>SIYAQ</strong>. I turn data, systems, and AI into practical products.
                 </p>
-                <div class="cta-group" data-reveal style="justify-content: center;">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="assets/Mohammed_Alghafli_CV.pdf" target="_blank" class="btn btn-outline">
+                <div class="cta-group" data-reveal>
+                    <a href="#work" class="btn btn-primary magnetic">
+                        View my work <span class="btn-icon-circle"><i data-lucide="arrow-down"></i></span>
+                    </a>
+                    <a href="assets/Mohammed_Alghafli_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
                         <i data-lucide="download"></i> Download CV
                     </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i data-lucide="mail"></i> Contact Me
-                    </a>
-                    <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="btn btn-outline">
-                        <i data-lucide="linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/xr3g77" target="_blank" class="btn btn-outline">
-                        <i data-lucide="github"></i> GitHub
-                    </a>
+                </div>
+                <div class="hero-socials" data-reveal>
+                    <a href="https://github.com/xr3g77" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:xr3g77@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
                 </div>
             </div>
+
+            <!-- Stats strip -->
+            <div class="stats-strip" data-reveal>
+                <div class="stat">
+                    <span class="stat-num" data-count="5" data-suffix="+">0</span>
+                    <span class="stat-label">Projects shipped</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="6">0</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">CEO</span>
+                    <span class="stat-label">Founder of SIYAQ</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">CIS</span>
+                    <span class="stat-label">King Faisal University</span>
+                </div>
+            </div>
+        </div>
+        <a href="#work" class="scroll-cue" data-reveal aria-label="Scroll to work">
+            <span class="scroll-cue-mouse"><span class="scroll-cue-wheel"></span></span>
+        </a>
+    </section>
+
+    <!-- Work / Projects Section -->
+    <section id="work">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="section-eyebrow">Selected Work</p>
+                <h2 class="section-title">Projects I've built</h2>
+            </div>
+
+            <!-- Filter bar -->
+            <div class="filter-bar" id="filter-bar" data-reveal role="tablist" aria-label="Filter projects by category">
+                <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-chip" data-filter="data" role="tab" aria-selected="false">Data &amp; BI</button>
+                <button class="filter-chip" data-filter="backend" role="tab" aria-selected="false">Backend</button>
+                <button class="filter-chip" data-filter="systems" role="tab" aria-selected="false">Systems</button>
+                <button class="filter-chip" data-filter="product" role="tab" aria-selected="false">Product</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- SIYAQ -->
+                <article class="project-card is-feature" data-category="product" data-reveal>
+                    <div class="project-glow" aria-hidden="true"></div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><i data-lucide="graduation-cap"></i></span>
+                        <span class="project-tag tag-progress">In Progress</span>
+                    </div>
+                    <h3 class="project-title">SIYAQ Educational Platform</h3>
+                    <p class="project-description">
+                        An educational platform and brand system that makes data learning practical and accessible. Designing the architecture, content model, and end-to-end user experience.
+                    </p>
+                    <div class="project-tech-list">
+                        <span>Systems Design</span>
+                        <span>UI/UX</span>
+                        <span>Brand Identity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" title="View on GitHub" aria-label="SIYAQ on GitHub"><i data-lucide="github"></i></a>
+                        <a href="#" title="Live link" aria-label="SIYAQ live link"><i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Riyadh Metro -->
+                <article class="project-card" data-category="data" data-reveal>
+                    <div class="project-glow" aria-hidden="true"></div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><i data-lucide="train-front"></i></span>
+                        <span class="project-tag">Data Analysis</span>
+                    </div>
+                    <h3 class="project-title">Riyadh Metro Data Dashboard</h3>
+                    <p class="project-description">
+                        Analyzed Riyadh Metro data to explore ridership patterns and station-level trends. Cleaned the dataset and built visualizations that communicate insights clearly.
+                    </p>
+                    <div class="project-tech-list">
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>Data Cleaning</span>
+                        <span>Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" rel="noopener" title="View on GitHub" aria-label="Riyadh Metro on GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" rel="noopener" title="Live link" aria-label="Riyadh Metro live link"><i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Laravel Movie API -->
+                <article class="project-card" data-category="backend" data-reveal>
+                    <div class="project-glow" aria-hidden="true"></div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><i data-lucide="server"></i></span>
+                        <span class="project-tag">Backend API</span>
+                    </div>
+                    <h3 class="project-title">Laravel Movie API</h3>
+                    <p class="project-description">
+                        A backend REST API built with Laravel to manage movie data, handle user authentication, and serve endpoints for front-end integration.
+                    </p>
+                    <div class="project-tech-list">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>REST API</span>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/xr3g77/laravel-movie-api" target="_blank" rel="noopener" title="View on GitHub" aria-label="Laravel Movie API on GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://github.com/xr3g77/laravel-movie-api" target="_blank" rel="noopener" title="Live link" aria-label="Laravel Movie API live link"><i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Database Design -->
+                <article class="project-card" data-category="systems" data-reveal>
+                    <div class="project-glow" aria-hidden="true"></div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><i data-lucide="database"></i></span>
+                        <span class="project-tag">Database</span>
+                    </div>
+                    <h3 class="project-title">Enterprise ERD &amp; DB Design</h3>
+                    <p class="project-description">
+                        A comprehensive Entity-Relationship Diagram and relational schema for an enterprise scenario, focused on normalization and data integrity.
+                    </p>
+                    <div class="project-tech-list">
+                        <span>Database Design</span>
+                        <span>SQL</span>
+                        <span>ERD</span>
+                        <span>Normalization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/xr3g77/db-design" target="_blank" rel="noopener" title="View on GitHub" aria-label="Database Design on GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://github.com/xr3g77/db-design" target="_blank" rel="noopener" title="Live link" aria-label="Database Design live link"><i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Hash Plus Sales -->
+                <article class="project-card" data-category="data" data-reveal>
+                    <div class="project-glow" aria-hidden="true"></div>
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><i data-lucide="line-chart"></i></span>
+                        <span class="project-tag">Capstone</span>
+                    </div>
+                    <h3 class="project-title">Hash Plus Sales Analysis</h3>
+                    <p class="project-description">
+                        Capstone project analyzing sales data to surface revenue trends. Cleaned and transformed the data, then built summary reports highlighting actionable business insights.
+                    </p>
+                    <div class="project-tech-list">
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>Data Analysis</span>
+                        <span>Reporting</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" rel="noopener" title="View on GitHub" aria-label="Hash Plus Sales on GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" rel="noopener" title="Live link" aria-label="Hash Plus Sales live link"><i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </article>
+
+            </div>
+            <p class="filter-empty" id="filter-empty" hidden>No projects in this category yet.</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title" data-reveal>About Me</h2>
             <div class="about-grid">
-                <div class="about-text" data-reveal>
-                    <p>
-                        I am Mohammed Alghafli, a Computer Information Systems student at King Faisal University. I am an aspiring Full-Stack Software Developer with a strong interest in Artificial Intelligence, data solutions, and information systems. I enjoy building practical digital solutions that connect technology, data, and real business needs.
-                    </p>
-                    <p>
-                        I am also the CEO & Co-Founder of SIYAQ, an educational initiative focused on making data learning more practical, modern, and accessible. Through SIYAQ and my university activities, I have gained experience in leadership, technical content, data analysis, dashboard design, and building learning experiences.
-                    </p>
-                    <p>
-                        My technical interests include software development, backend systems, databases, AI applications, business intelligence, and data-driven decision-making. I am continuously developing my skills in Python, SQL, Power BI, Excel, HTML, CSS, GitHub, and modern web technologies.
-                    </p>
-                </div>
                 <div class="profile-img-container" data-reveal>
+                    <div class="profile-ring" aria-hidden="true"></div>
                     <div class="profile-img-wrapper">
-                        <img src="assets/profile-photo.jpg" alt="Mohammed Alghafli Profile Photo">
+                        <img src="assets/profile-photo.jpg" alt="Portrait of Mohammed Alghafli" loading="lazy">
+                    </div>
+                    <div class="profile-badge" aria-hidden="true">
+                        <i data-lucide="sparkles"></i> CEO &amp; Co-Founder, SIYAQ
+                    </div>
+                </div>
+                <div class="about-text" data-reveal>
+                    <p class="section-eyebrow">About Me</p>
+                    <h2 class="section-title">Technology, data, and real business needs.</h2>
+                    <p>
+                        I'm a Computer Information Systems student at King Faisal University and an aspiring full-stack developer with a strong interest in AI, data solutions, and information systems. I enjoy building practical digital products that connect technology, data, and real-world needs.
+                    </p>
+                    <p>
+                        As CEO &amp; Co-Founder of <strong>SIYAQ</strong>, I work on making data learning more practical, modern, and accessible — gaining experience across leadership, technical content, data analysis, dashboard design, and learning experiences.
+                    </p>
+                    <p>
+                        My focus spans software development, backend systems, databases, AI applications, and business intelligence. I'm continuously sharpening my skills in Python, SQL, Power BI, and modern web technologies.
+                    </p>
+                    <div class="about-pills">
+                        <span class="about-pill"><i data-lucide="map-pin"></i> Al-Ahsa, Saudi Arabia</span>
+                        <span class="about-pill"><i data-lucide="briefcase"></i> Open to co-op &amp; internships</span>
                     </div>
                 </div>
             </div>
@@ -88,52 +290,56 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title" data-reveal>Technical Skills</h2>
-            <div class="skills-container" data-reveal>
-                
-                <div class="skills-category">
-                    <h3 class="skills-category-title"><i data-lucide="code"></i> Software Development</h3>
+            <div class="section-head" data-reveal>
+                <p class="section-eyebrow">Toolkit</p>
+                <h2 class="section-title">Technical skills</h2>
+            </div>
+            <div class="skills-container">
+
+                <div class="skills-category" data-reveal>
+                    <h3 class="skills-category-title"><i data-lucide="code-2"></i> Software Development</h3>
                     <div class="skills-grid">
                         <span class="skill-badge">HTML</span>
                         <span class="skill-badge">CSS</span>
                         <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
                         <span class="skill-badge">Python</span>
                     </div>
                 </div>
 
-                <div class="skills-category">
-                    <h3 class="skills-category-title"><i data-lucide="bar-chart-2"></i> Data & Business Intelligence</h3>
+                <div class="skills-category" data-reveal>
+                    <h3 class="skills-category-title"><i data-lucide="bar-chart-3"></i> Data &amp; Business Intelligence</h3>
                     <div class="skills-grid">
                         <span class="skill-badge">Excel</span>
                         <span class="skill-badge">Power BI</span>
                         <span class="skill-badge">Power Query</span>
-                        <span class="skill-badge">Python</span>
                         <span class="skill-badge">Pandas</span>
                         <span class="skill-badge">Data Cleaning</span>
                         <span class="skill-badge">Dashboards</span>
                     </div>
                 </div>
 
-                <div class="skills-category">
-                    <h3 class="skills-category-title"><i data-lucide="database"></i> Databases & Systems</h3>
+                <div class="skills-category" data-reveal>
+                    <h3 class="skills-category-title"><i data-lucide="database"></i> Databases &amp; Systems</h3>
                     <div class="skills-grid">
                         <span class="skill-badge">SQL</span>
                         <span class="skill-badge">MySQL</span>
                         <span class="skill-badge">Database Design</span>
                         <span class="skill-badge">ERD</span>
                         <span class="skill-badge">Information Systems</span>
-                        <span class="skill-badge">Requirements Engineering</span>
+                        <span class="skill-badge">Requirements Eng.</span>
                     </div>
                 </div>
 
-                <div class="skills-category">
-                    <h3 class="skills-category-title"><i data-lucide="brain"></i> AI & Technical Growth</h3>
+                <div class="skills-category" data-reveal>
+                    <h3 class="skills-category-title"><i data-lucide="brain-circuit"></i> AI &amp; Growth</h3>
                     <div class="skills-grid">
                         <span class="skill-badge">AI Concepts</span>
-                        <span class="skill-badge">Machine Learning Basics</span>
+                        <span class="skill-badge">ML Basics</span>
                         <span class="skill-badge">Prompt Engineering</span>
-                        <span class="skill-badge">Automation Ideas</span>
-                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">Automation</span>
+                        <span class="skill-badge">Git &amp; GitHub</span>
                         <span class="skill-badge">Problem Solving</span>
                     </div>
                 </div>
@@ -142,155 +348,47 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title" data-reveal>Selected Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1: SIYAQ -->
-                <div class="project-card" data-reveal>
-                    <div class="project-header">
-                        <div class="project-folder"><i data-lucide="folder"></i></div>
-                        <div class="project-links">
-                            <a href="#" title="View on GitHub"><i data-lucide="github"></i></a>
-                            <a href="#" title="Live Link"><i data-lucide="external-link"></i></a>
-                        </div>
-                    </div>
-                    <span class="badge" style="font-size: 10px; padding: 2px 8px; margin-bottom: 10px; display: inline-block; width: max-content; background: rgba(56, 189, 248, 0.15); color: var(--accent-secondary); border-color: rgba(56, 189, 248, 0.3);">In Progress</span>
-                    <h3 class="project-title">SIYAQ Educational Platform</h3>
-                    <p class="project-description">
-                        Building an educational platform and brand system focused on making data learning practical and accessible. Currently designing the architecture and user experience.
-                    </p>
-                    <div class="project-tech-list">
-                        <span>Systems Design</span>
-                        <span>UI/UX</span>
-                        <span>Brand Identity</span>
-                    </div>
-                </div>
-
-                <!-- Project 2: Riyadh Metro -->
-                <div class="project-card" data-reveal>
-                    <div class="project-header">
-                        <div class="project-folder"><i data-lucide="folder"></i></div>
-                        <div class="project-links">
-                            <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" title="View on GitHub"><i data-lucide="github"></i></a>
-                            <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" title="Live Link"><i data-lucide="external-link"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Riyadh Metro Data Dashboard</h3>
-                    <p class="project-description">
-                        Analyzed Riyadh Metro data to explore ridership patterns and station-level trends. Cleaned and prepared the dataset, then built visualizations to communicate insights clearly.
-                    </p>
-                    <div class="project-tech-list">
-                        <span>Power BI</span>
-                        <span>Excel</span>
-                        <span>Data Cleaning</span>
-                        <span>Visualization</span>
-                    </div>
-                </div>
-
-                <!-- Project 3: Laravel Movie API -->
-                <div class="project-card" data-reveal>
-                    <div class="project-header">
-                        <div class="project-folder"><i data-lucide="folder"></i></div>
-                        <div class="project-links">
-                            <a href="https://github.com/xr3g77/laravel-movie-api" target="_blank" title="View on GitHub"><i data-lucide="github"></i></a>
-                            <a href="https://github.com/xr3g77/laravel-movie-api" target="_blank" title="Live Link"><i data-lucide="external-link"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Laravel Movie API</h3>
-                    <p class="project-description">
-                        Developing a backend API using Laravel to manage movie data, handle user authentication, and provide endpoints for front-end integration.
-                    </p>
-                    <div class="project-tech-list">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>REST API</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-
-                <!-- Project 4: Database Design -->
-                <div class="project-card" data-reveal>
-                    <div class="project-header">
-                        <div class="project-folder"><i data-lucide="folder"></i></div>
-                        <div class="project-links">
-                            <a href="https://github.com/xr3g77/db-design" target="_blank" title="View on GitHub"><i data-lucide="github"></i></a>
-                            <a href="https://github.com/xr3g77/db-design" target="_blank" title="Live Link"><i data-lucide="external-link"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Enterprise ERD & DB Design</h3>
-                    <p class="project-description">
-                        Designed a comprehensive Entity-Relationship Diagram and relational database schema for an enterprise system scenario, focusing on normalization and data integrity.
-                    </p>
-                    <div class="project-tech-list">
-                        <span>Database Design</span>
-                        <span>SQL</span>
-                        <span>ERD</span>
-                        <span>Normalization</span>
-                    </div>
-                </div>
-
-                <!-- Project 6: Sales Data Analysis -->
-                <div class="project-card" data-reveal>
-                    <div class="project-header">
-                        <div class="project-folder"><i data-lucide="folder"></i></div>
-                        <div class="project-links">
-                            <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" title="View on GitHub"><i data-lucide="github"></i></a>
-                            <a href="https://github.com/xr3g77/power-bi-projects" target="_blank" title="Live Link"><i data-lucide="external-link"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Hash Plus Sales Analysis</h3>
-                    <p class="project-description">
-                        Capstone project analyzing sales data to identify revenue trends. Cleaned and transformed data, building summary reports to highlight actionable business insights.
-                    </p>
-                    <div class="project-tech-list">
-                        <span>Power BI</span>
-                        <span>Excel</span>
-                        <span>Data Analysis</span>
-                        <span>Reporting</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
+    <!-- Experience & Education Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title" data-reveal>Experience & Involvement</h2>
+            <div class="section-head" data-reveal>
+                <p class="section-eyebrow">Journey</p>
+                <h2 class="section-title">Experience &amp; education</h2>
+            </div>
             <div class="timeline">
-                
+
                 <div class="timeline-item" data-reveal>
-                    <p class="timeline-date">2026 – Present</p>
-                    <h3 class="timeline-title">CEO & Founder</h3>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <p class="timeline-date">2026 — Present</p>
+                    <h3 class="timeline-title">CEO &amp; Founder</h3>
                     <p class="timeline-company">SIYAQ</p>
                     <ul class="timeline-details">
                         <li>Building an educational initiative focused on practical data learning.</li>
                         <li>Designing learning experiences, bootcamp content, and technical identity.</li>
-                        <li>Working on content, branding, data education, and digital products.</li>
+                        <li>Leading content, branding, data education, and digital products.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item" data-reveal>
-                    <p class="timeline-date">2026 – Present</p>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <p class="timeline-date">2026 — Present</p>
                     <h3 class="timeline-title">Head of Data Analysis Committee</h3>
                     <p class="timeline-company">Future Tech Club</p>
                     <ul class="timeline-details">
-                        <li>Led data-related activities and contributed to workshops and bootcamps.</li>
-                        <li>Worked on Excel, Python, Power BI, and dashboard-related learning content.</li>
+                        <li>Led data activities and contributed to workshops and bootcamps.</li>
+                        <li>Built learning content across Excel, Python, Power BI, and dashboards.</li>
                         <li>Helped organize technical learning experiences for students.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item" data-reveal>
-                    <p class="timeline-date">2021 – Present</p>
-                    <h3 class="timeline-title">Computer Information Systems Student</h3>
-                    <p class="timeline-company">King Faisal University</p>
+                    <span class="timeline-node" aria-hidden="true"></span>
+                    <p class="timeline-date">Aug 2021 — 2027 (Expected)</p>
+                    <h3 class="timeline-title">B.Sc. Computer Information Systems</h3>
+                    <p class="timeline-company">King Faisal University — Al-Ahsa, Saudi Arabia</p>
                     <ul class="timeline-details">
-                        <li>Studying systems, databases, software development, requirements engineering, enterprise systems, and technical problem solving.</li>
+                        <li>Relevant coursework: Database Design, System Analysis &amp; Design, Enterprise Systems.</li>
+                        <li>Studying software development, requirements engineering, and technical problem solving.</li>
                     </ul>
                 </div>
 
@@ -301,30 +399,32 @@
     <!-- Certifications Section -->
     <section id="certs">
         <div class="container">
-            <h2 class="section-title" data-reveal>Certifications</h2>
+            <div class="section-head" data-reveal>
+                <p class="section-eyebrow">Credentials</p>
+                <h2 class="section-title">Certifications</h2>
+            </div>
             <div class="certs-grid">
-                
-                <!-- Certificate 1 -->
+
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/futech-data-analysis-bootcamp-certificate.jpeg')">
-                        <img src="assets/futech-data-analysis-bootcamp-certificate.jpeg" alt="Data Analysis with Excel and Power BI Bootcamp Certificate">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/futech-data-analysis-bootcamp-certificate.jpeg')" aria-label="View Data Analysis Bootcamp certificate">
+                        <img src="assets/futech-data-analysis-bootcamp-certificate.jpeg" alt="Data Analysis with Excel and Power BI Bootcamp certificate" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
-                        <h3 class="cert-title">Data Analysis with Excel and Power BI Bootcamp</h3>
+                        <h3 class="cert-title">Data Analysis with Excel &amp; Power BI</h3>
                         <div class="cert-issuer-group">
                             <span class="cert-issuer">Future Tech Club</span>
                             <span class="cert-year">2026</span>
                         </div>
                         <p class="cert-desc">Presented a data analysis bootcamp focused on Excel and Power BI.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/futech-data-analysis-bootcamp-certificate.jpeg')">View Certificate</button>
                     </div>
                 </div>
 
-                <!-- Certificate 2 -->
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/kaust-ai-python-basics-badge.png')">
-                        <img src="assets/kaust-ai-python-basics-badge.png" alt="AI Prerequisites: Python Basics Badge">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/kaust-ai-python-basics-badge.png')" aria-label="View AI Python Basics badge">
+                        <img src="assets/kaust-ai-python-basics-badge.png" alt="AI Prerequisites: Python Basics badge" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
                         <h3 class="cert-title">AI Prerequisites: Python Basics</h3>
                         <div class="cert-issuer-group">
@@ -332,91 +432,69 @@
                             <span class="cert-year">2026</span>
                         </div>
                         <p class="cert-desc">Completed prerequisite Python basics for artificial intelligence learning.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/kaust-ai-python-basics-badge.png')">View Certificate</button>
                     </div>
                 </div>
 
-                <!-- Certificate 3 -->
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/kaust-introduction-to-ai-certificate.png')">
-                        <img src="assets/kaust-introduction-to-ai-certificate.png" alt="Introduction to Artificial Intelligence Certificate">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/kaust-introduction-to-ai-certificate.jpg')" aria-label="View Introduction to AI certificate">
+                        <img src="assets/kaust-introduction-to-ai-certificate.jpg" alt="Introduction to Artificial Intelligence certificate" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
                         <h3 class="cert-title">Introduction to Artificial Intelligence</h3>
                         <div class="cert-issuer-group">
-                            <span class="cert-issuer">KAUST Academy & KAUST</span>
+                            <span class="cert-issuer">KAUST Academy &amp; KAUST</span>
                             <span class="cert-year">2026</span>
                         </div>
-                        <p class="cert-desc">Completed 40 hours of coursework covering machine learning foundations and deep learning.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/kaust-introduction-to-ai-certificate.png')">View Certificate</button>
+                        <p class="cert-desc">40 hours covering machine learning foundations and deep learning.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 4 -->
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/hash-plus-data-analysis-certificate.png')">
-                        <img src="assets/hash-plus-data-analysis-certificate.png" alt="Data Analysis Bootcamp Certificate">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/hash-plus-data-analysis-certificate.jpg')" aria-label="View Data Analysis Bootcamp certificate">
+                        <img src="assets/hash-plus-data-analysis-certificate.jpg" alt="Hash Plus Data Analysis Bootcamp certificate" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
                         <h3 class="cert-title">Data Analysis Bootcamp</h3>
                         <div class="cert-issuer-group">
                             <span class="cert-issuer">Hash Plus</span>
                             <span class="cert-year">2026</span>
                         </div>
-                        <p class="cert-desc">Completed a 15-hour project-based data analysis bootcamp.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/hash-plus-data-analysis-certificate.png')">View Certificate</button>
+                        <p class="cert-desc">A 15-hour project-based data analysis bootcamp.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 5 -->
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/ibm-excel-basics-for-data-analysis-certificate.png')">
-                        <img src="assets/ibm-excel-basics-for-data-analysis-certificate.png" alt="Excel Basics for Data Analysis Certificate">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/ibm-excel-basics-for-data-analysis-certificate.jpg')" aria-label="View Excel Basics certificate">
+                        <img src="assets/ibm-excel-basics-for-data-analysis-certificate.jpg" alt="Excel Basics for Data Analysis certificate" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
                         <h3 class="cert-title">Excel Basics for Data Analysis</h3>
                         <div class="cert-issuer-group">
                             <span class="cert-issuer">IBM / Coursera</span>
                             <span class="cert-year">2025</span>
                         </div>
-                        <p class="cert-desc">Completed an IBM course focused on Excel basics for data analysis.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/ibm-excel-basics-for-data-analysis-certificate.png')">View Certificate</button>
+                        <p class="cert-desc">An IBM course focused on Excel basics for data analysis.</p>
                     </div>
                 </div>
 
-                <!-- Certificate 6 -->
                 <div class="cert-card" data-reveal>
-                    <div class="cert-img-header" onclick="openModal('assets/ibm-introduction-to-data-analytics-certificate.png')">
-                        <img src="assets/ibm-introduction-to-data-analytics-certificate.png" alt="Introduction to Data Analytics Certificate">
-                    </div>
+                    <button class="cert-img-header" onclick="openModal('assets/ibm-introduction-to-data-analytics-certificate.jpg')" aria-label="View Introduction to Data Analytics certificate">
+                        <img src="assets/ibm-introduction-to-data-analytics-certificate.jpg" alt="Introduction to Data Analytics certificate" loading="lazy">
+                        <span class="cert-view-hint"><i data-lucide="maximize-2"></i> View</span>
+                    </button>
                     <div class="cert-body">
                         <h3 class="cert-title">Introduction to Data Analytics</h3>
                         <div class="cert-issuer-group">
                             <span class="cert-issuer">IBM / Coursera</span>
                             <span class="cert-year">2025</span>
                         </div>
-                        <p class="cert-desc">Completed an IBM course introducing the fundamentals of data analytics.</p>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('assets/ibm-introduction-to-data-analytics-certificate.png')">View Certificate</button>
+                        <p class="cert-desc">An IBM course introducing the fundamentals of data analytics.</p>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title" data-reveal>Education</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-reveal>
-                    <p class="timeline-date">Aug 2021 – 2027 Expected</p>
-                    <h3 class="timeline-title">Bachelor of Computer Information Systems</h3>
-                    <p class="timeline-company">King Faisal University — Al-Ahsa, Saudi Arabia</p>
-                    <p class="project-description">
-                        <strong>Relevant coursework:</strong> Database Design, System Analysis and Design, Enterprise Systems.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
@@ -424,56 +502,53 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title" data-reveal>Get In Touch</h2>
-            <h3 class="contact-headline" data-reveal>Let’s connect and build data-driven solutions.</h3>
-            <p class="contact-text" data-reveal style="max-width: 600px; margin: 0 auto 40px; color: var(--text-secondary);">
-                I am open to co-op opportunities, internships, technical collaborations, and projects related to software development, AI, data solutions, and information systems. Feel free to contact me through email, LinkedIn, or GitHub.
-            </p>
-            <div class="contact-methods" data-reveal style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; margin-bottom: 50px;">
-                <a href="mailto:xr3g77@gmail.com" class="btn btn-outline">
-                    <i data-lucide="mail"></i> Email
-                </a>
-                <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa" target="_blank" class="btn btn-outline">
-                    <i data-lucide="linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/xr3g77" target="_blank" class="btn btn-outline">
-                    <i data-lucide="github"></i> GitHub
-                </a>
-                <a href="#" target="_blank" class="btn btn-outline">
-                    <i data-lucide="twitter"></i> X / Twitter
-                </a>
-                <a href="#" class="btn btn-outline" style="pointer-events: none;">
-                    <i data-lucide="map-pin"></i> Saudi Arabia
-                </a>
+            <div class="contact-card" data-reveal>
+                <div class="contact-glow" aria-hidden="true"></div>
+                <p class="section-eyebrow">Contact</p>
+                <h2 class="contact-headline">Let's build software and data products that deliver real results.</h2>
+                <p class="contact-text">
+                    I'm open to co-op opportunities, internships, and technical collaborations across software development, AI, data, and information systems. Reach out any time.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:xr3g77@gmail.com" class="btn btn-primary magnetic">
+                        <i data-lucide="mail"></i> Email me <span class="btn-icon-circle"><i data-lucide="arrow-up-right"></i></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa" target="_blank" rel="noopener" class="btn btn-ghost">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/xr3g77" target="_blank" rel="noopener" class="btn btn-ghost">
+                        <i data-lucide="github"></i> GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container footer-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-mark" aria-hidden="true">M</span>
+                <span class="logo-text">Mohammed Alghafli</span>
+            </a>
             <div class="social-links">
-                <a href="https://github.com/xr3g77" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
-                <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
-                <a href="mailto:xr3g77@gmail.com" title="Email"><i data-lucide="mail"></i></a>
-                <a href="#" title="X / Twitter"><i data-lucide="twitter"></i></a>
+                <a href="https://github.com/xr3g77" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/mohammed-alghafli-8657402aa" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                <a href="mailto:xr3g77@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
             </div>
-            <p class="copyright">Designed & Built by Mohammed Alghafli</p>
+            <p class="copyright">© <span id="year"></span> Mohammed Alghafli — Designed &amp; built with care.</p>
         </div>
     </footer>
 
     <!-- Certificate Modal -->
-    <div id="certModal" class="modal">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div id="certModal" class="modal" role="dialog" aria-modal="true" aria-label="Certificate preview">
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
         <div class="modal-content">
-            <img id="modalImg" class="modal-image" src="" alt="Certificate Preview">
+            <img id="modalImg" class="modal-image" src="" alt="Certificate preview">
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>

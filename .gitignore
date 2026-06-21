@@ -1,3 +1,6 @@
 
 # Python cache (UI/UX Pro Max skill scripts)
 .claude/skills/**/__pycache__/
+
+# Local image backups (pre-optimization originals)
+assets/originals/
