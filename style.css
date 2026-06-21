@@ -134,47 +134,17 @@ section { padding: 116px 0; position: relative; }
   z-index: var(--z-aurora);
   overflow: hidden;
   pointer-events: none;
+  /* Static gradient mesh — painted once, no per-frame blur or scale.
+     This is what keeps scrolling smooth on every device. */
   background:
-    radial-gradient(120% 80% at 50% -10%, rgba(20, 28, 52, 0.7), transparent 60%),
+    radial-gradient(42% 38% at 12% 6%, rgba(52, 211, 153, 0.34), transparent 62%),
+    radial-gradient(40% 36% at 88% 4%, rgba(56, 189, 248, 0.30), transparent 62%),
+    radial-gradient(46% 44% at 72% 66%, rgba(129, 140, 248, 0.24), transparent 66%),
+    radial-gradient(42% 40% at 18% 88%, rgba(244, 114, 182, 0.16), transparent 66%),
+    radial-gradient(120% 80% at 50% -12%, rgba(20, 28, 52, 0.65), transparent 60%),
     var(--bg);
-}
-.aurora-blob {
-  position: absolute;
-  width: 52vw;
-  height: 52vw;
-  max-width: 720px;
-  max-height: 720px;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.5;
   will-change: transform;
 }
-.blob-a {
-  top: -14%; left: -8%;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.85), transparent 65%);
-  animation: drift-a 22s ease-in-out infinite alternate;
-}
-.blob-b {
-  top: -6%; right: -10%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.8), transparent 65%);
-  animation: drift-b 26s ease-in-out infinite alternate;
-}
-.blob-c {
-  top: 36%; left: 28%;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.6), transparent 65%);
-  animation: drift-c 30s ease-in-out infinite alternate;
-}
-.blob-d {
-  bottom: -18%; right: 12%;
-  width: 46vw; height: 46vw;
-  background: radial-gradient(circle, rgba(244, 114, 182, 0.4), transparent 65%);
-  animation: drift-d 28s ease-in-out infinite alternate;
-}
-
-@keyframes drift-a { from { transform: translate(0,0) scale(1); } to { transform: translate(12%, 10%) scale(1.12); } }
-@keyframes drift-b { from { transform: translate(0,0) scale(1.05); } to { transform: translate(-10%, 14%) scale(0.95); } }
-@keyframes drift-c { from { transform: translate(0,0) scale(1); } to { transform: translate(-14%, -8%) scale(1.15); } }
-@keyframes drift-d { from { transform: translate(0,0) scale(1.08); } to { transform: translate(8%, -10%) scale(0.92); } }
 
 .aurora-grid {
   position: absolute;
@@ -226,13 +196,13 @@ section { padding: 116px 0; position: relative; }
   padding: 12px 14px 12px 20px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--line);
-  background: rgba(10, 15, 31, 0.5);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: rgba(10, 15, 31, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: background var(--t), border-color var(--t), box-shadow var(--t), transform var(--t);
 }
 #navbar.scrolled .nav-inner {
-  background: rgba(8, 12, 26, 0.82);
+  background: rgba(8, 12, 26, 0.9);
   border-color: var(--line-strong);
   box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.8);
 }
@@ -839,7 +809,6 @@ section { padding: 116px 0; position: relative; }
   background: var(--glass-strong);
   border: 1px solid var(--line-strong);
   overflow: hidden;
-  backdrop-filter: blur(16px);
 }
 .contact-glow {
   position: absolute;
@@ -945,12 +914,13 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; }
 /* ===================================================================
    SCROLL REVEAL
    =================================================================== */
-[data-reveal] {
+/* Hide for animation ONLY when JS is active — no JS/observer = content stays visible */
+.js [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
-[data-reveal].revealed { opacity: 1; transform: none; }
+.js [data-reveal].revealed { opacity: 1; transform: none; }
 
 /* ===================================================================
    RESPONSIVE
@@ -1003,7 +973,6 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; }
   .certs-grid { grid-template-columns: 1fr; }
   .cta-group .btn { flex: 1; justify-content: center; }
   .contact-card { padding: 48px 24px; }
-  .aurora-blob { filter: blur(60px); }
 }
 
 /* ===================================================================
@@ -1016,6 +985,5 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  [data-reveal] { opacity: 1; transform: none; }
-  .aurora-blob { animation: none; }
+  .js [data-reveal] { opacity: 1; transform: none; }
 }

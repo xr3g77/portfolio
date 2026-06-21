@@ -14,6 +14,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Mark JS active so reveal animations are scoped to JS; content stays visible without it -->
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <script src="https://unpkg.com/lucide@1.21.0/dist/umd/lucide.min.js" defer></script>
@@ -23,12 +25,8 @@
     <!-- Skip link (a11y) -->
     <a href="#work" class="skip-link">Skip to content</a>
 
-    <!-- Aurora gradient-mesh backdrop -->
+    <!-- Aurora gradient-mesh backdrop (static, GPU-cheap) -->
     <div class="aurora" aria-hidden="true">
-        <span class="aurora-blob blob-a" data-parallax="0.06"></span>
-        <span class="aurora-blob blob-b" data-parallax="-0.04"></span>
-        <span class="aurora-blob blob-c" data-parallax="0.03"></span>
-        <span class="aurora-blob blob-d" data-parallax="-0.05"></span>
         <div class="aurora-grid"></div>
         <div class="aurora-noise"></div>
     </div>

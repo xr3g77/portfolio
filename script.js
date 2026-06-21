@@ -111,21 +111,39 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------------------------------------------------------------
        4. Scroll reveal (staggered per group)
        --------------------------------------------------------------- */
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const revealAll = () => revealEls.forEach(el => el.classList.add('revealed'));
 
-    document.querySelectorAll('[data-reveal]').forEach(el => {
-        const siblings = Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal'));
-        const index = siblings.indexOf(el);
-        if (index > 0 && !reduceMotion) el.style.transitionDelay = `${Math.min(index * 80, 420)}ms`;
-        revealObserver.observe(el);
-    });
+    if (!('IntersectionObserver' in window)) {
+        revealAll();
+    } else {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => {
+            const siblings = Array.from(el.parentElement.children).filter(c => c.hasAttribute('data-reveal'));
+            const index = siblings.indexOf(el);
+            if (index > 0 && !reduceMotion) el.style.transitionDelay = `${Math.min(index * 80, 420)}ms`;
+            revealObserver.observe(el);
+        });
+
+        // Safety net: if anything is still hidden well after load (e.g. observer
+        // never fired), reveal it so content can never get stuck invisible.
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('[data-reveal]:not(.revealed)').forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    if (r.top < window.innerHeight) el.classList.add('revealed');
+                });
+            }, 1200);
+        });
+    }
 
     /* ---------------------------------------------------------------
        5. Animated counters
