@@ -223,7 +223,15 @@ section { padding: 82px 0; position: relative; }
 .project-preview { position: relative; padding: 22px; display: flex; align-items: center; justify-content: center; background: radial-gradient(120% 100% at 50% 0%, rgba(255,106,0,0.08), transparent 60%); border-right: 1px solid var(--line); }
 .project.featured:nth-of-type(even) .project-preview { border-right: none; border-left: 1px solid var(--line); }
 .mockup { width: 100%; height: auto; border-radius: 12px; filter: drop-shadow(0 24px 40px rgba(0,0,0,0.5)); }
-.preview-badge { position: absolute; top: 16px; right: 16px; font-size: 0.7rem; font-family: 'JetBrains Mono',monospace; color: var(--orange-2); background: rgba(10,10,12,0.7); border: 1px solid var(--orange-ring); padding: 4px 10px; border-radius: var(--pill); backdrop-filter: blur(6px); }
+.preview-badge { position: absolute; top: 16px; right: 16px; font-size: 0.7rem; font-family: 'JetBrains Mono',monospace; color: var(--orange-2); background: rgba(10,10,12,0.7); border: 1px solid var(--orange-ring); padding: 4px 10px; border-radius: var(--pill); backdrop-filter: blur(6px); z-index: 2; }
+
+/* Real dashboard screenshot preview (opens lightbox) */
+.shot-btn { position: relative; display: block; width: 100%; padding: 0; border: none; background: transparent; border-radius: 12px; overflow: hidden; cursor: pointer; }
+.shot-btn img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line-2); box-shadow: 0 22px 40px rgba(0,0,0,0.5); transition: transform var(--t); }
+.shot-btn:hover img { transform: scale(1.02); }
+.shot-zoom { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(10,10,12,0.5); color: #fff; font-weight: 600; font-size: 0.9rem; opacity: 0; transition: opacity var(--t); border-radius: 12px; }
+.shot-zoom .ic { color: var(--orange-2); }
+.shot-btn:hover .shot-zoom, .shot-btn:focus-visible .shot-zoom { opacity: 1; }
 .project-info { padding: 24px; display: flex; flex-direction: column; }
 .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
 .tag { font-size: 0.72rem; font-family: 'JetBrains Mono',monospace; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-2); background: var(--surface); border: 1px solid var(--line); padding: 5px 11px; border-radius: var(--pill); }
